@@ -21,6 +21,10 @@ Code/commits/PRs: normal. Off: "stop caveman" / "normal mode".
 - Use Framer Motion `useMotionValue` for physics.
 - SVG textures over large PNGs.
 
+## Page Hero Rules
+- **Dark heroes only:** All page hero sections MUST use `bg-rio-oscuro text-white`. Navbar is fixed + transparent white text — light backgrounds make it invisible.
+- No `bg-arena`, `bg-off-white`, or any light color on page heroes.
+
 ## Deploy & Infra Rules (Auto-Applied)
 1. **Vercel Deploy First:** Check `git remote -v` before push. If empty, ask for GitHub URL. Ensure `vercel.json` with `{"framework": "nextjs"}` exists.
 2. **Supabase Guard:** Never call supabase directly. Always use a data layer that checks `if (!supabase) return staticFallback`. Client creation must return `null` if env vars are missing.

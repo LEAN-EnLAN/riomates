@@ -107,3 +107,28 @@ Before writing any `.env.*` file, run: `grep -q ".env.local" .gitignore || echo 
 - Pattern-Key: harden.env_gitignore
 
 ---
+
+## [LRN-20260413-005] frontend.navbar_hero_contrast
+
+**Logged**: 2026-04-13T04:00:00Z
+**Priority**: high
+**Status**: promoted
+**Promoted**: AGENTS.md (Page Hero Rules section)
+**Area**: frontend
+
+### Summary
+All page hero sections MUST use dark backgrounds (`bg-rio-oscuro text-white`) for fixed navbar visibility. Light heroes make white navbar text invisible.
+
+### Details
+Navbar is `position: fixed` with transparent background and white text by default. Pages with `bg-arena`, `bg-off-white`, or any light hero had invisible nav. Fixed on `/el-origen`, `/coleccion`, `/coleccion/[slug]`.
+
+### Suggested Action
+Rule added to AGENTS.md. No page hero should ever use a light background.
+
+### Metadata
+- Source: user_feedback
+- Related Files: src/app/el-origen/page.tsx, src/app/coleccion/page.tsx, src/app/coleccion/[slug]/page.tsx
+- Tags: navbar, contrast, hero, visibility
+- Pattern-Key: frontend.hero_dark_bg
+
+---
