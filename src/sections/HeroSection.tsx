@@ -67,8 +67,19 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 w-full pb-20 lg:pb-28 px-6 lg:px-12 max-w-7xl mx-auto">
         <div className="max-w-2xl">
+          {/* Headline */}
+          <Reveal delay={100}>
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-semibold leading-[0.95] tracking-tight mb-6">
+              Nacidos donde el
+              <br />
+              <span className="text-calabaza">Paraná</span> encuentra
+              <br />
+              la tierra
+            </h1>
+          </Reveal>
+
           {/* Small logo + tagline */}
-          <Reveal>
+          <Reveal delay={150}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/90 rounded-lg flex items-center justify-center">
                 <span className="font-heading text-lg font-bold text-rio-oscuro leading-none">R</span>
@@ -82,17 +93,6 @@ export function HeroSection() {
                 </p>
               </div>
             </div>
-          </Reveal>
-
-          {/* Headline */}
-          <Reveal delay={100}>
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-semibold leading-[0.95] tracking-tight mb-6">
-              Nacidos donde el
-              <br />
-              <span className="text-calabaza">Paraná</span> encuentra
-              <br />
-              la tierra
-            </h1>
           </Reveal>
 
           {/* Subtitle */}

@@ -131,46 +131,54 @@ const TikTokFeaturedCard = () => {
   )!;
 
   return (
-    <a
-      href={tiktokVideo.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative group block w-full aspect-[9/16] rounded-[2.5rem] overflow-hidden bg-rio-oscuro border border-alpaca/10 shadow-2xl shadow-rio-oscuro/20"
-    >
-      {/* Static thumbnail background */}
-      <img
-        src="/images/products/mate-atardecer-table.jpeg"
-        alt={tiktokVideo.title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-      />
-
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-rio-oscuro via-rio-oscuro/30 to-rio-oscuro/50" />
-
-      {/* Play button center */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-          <PlayCircle size={36} weight="fill" className="text-white" />
-        </div>
+    <div className="relative group w-full aspect-[9/16] rounded-[2.5rem] overflow-hidden bg-rio-oscuro border border-alpaca/10 shadow-2xl shadow-rio-oscuro/20">
+      {/* TikTok iframe — muted, autoplay, loop */}
+      <div className="absolute inset-0 overflow-hidden">
+        <iframe
+          src={`https://www.tiktok.com/embed/v2/${tiktokVideo.id}?autoplay=1&muted=1&controls=0&loop=1&playsinline=1`}
+          className="w-full h-full border-0"
+          allow="autoplay; encrypted-media"
+          title={tiktokVideo.title}
+          loading="lazy"
+        />
       </div>
 
+      {/* Subtle overlay for contrast */}
+      <div className="absolute inset-0 bg-rio-oscuro/10" />
+
+      {/* Click overlay — opens TikTok on click */}
+      <a
+        href={tiktokVideo.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 cursor-pointer z-10"
+        aria-label={`Ver ${tiktokVideo.title} en TikTok`}
+      >
+        {/* Center play button */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+            <PlayCircle size={36} weight="fill" className="text-white" />
+          </div>
+        </div>
+      </a>
+
       {/* Content Overlay */}
-      <div className="absolute inset-0 p-10 flex flex-col justify-end">
+      <div className="absolute inset-0 p-10 flex flex-col justify-end bg-gradient-to-t from-rio-oscuro via-rio-oscuro/10 to-transparent pointer-events-none z-20">
         <div className="flex items-center gap-2 mb-4">
           <div className="w-2 h-2 rounded-full bg-calabaza animate-pulse" />
           <span className="text-white/70 text-[10px] tracking-[0.3em] uppercase font-body font-semibold">
             Video Destacado
           </span>
         </div>
-        <h3 className="text-white text-3xl font-serif leading-tight mb-2 group-hover:text-calabaza transition-colors duration-500">
+        <h3 className="text-white text-3xl font-serif leading-tight group-hover:text-calabaza transition-colors duration-500">
           {tiktokVideo.title}
         </h3>
-        <div className="mt-4 flex items-center gap-3 text-white/50 text-[10px] font-body tracking-[0.2em] uppercase">
+        <div className="mt-6 flex items-center gap-3 text-white/50 text-[10px] font-body tracking-[0.2em] uppercase">
           <span>Ver en TikTok</span>
           <div className="w-8 h-[1px] bg-white/20 group-hover:w-14 group-hover:bg-calabaza transition-all duration-500" />
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
@@ -208,8 +216,8 @@ const RealMediaCard = ({ item }: { item: MediaItem }) => {
         </div>
       </div>
 
-      <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-rio-oscuro/85 via-rio-oscuro/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out">
-        <p className="text-white text-sm md:text-base font-serif italic leading-relaxed line-clamp-3 mb-4">
+      <div className="absolute inset-0 p-10 flex flex-col justify-end bg-gradient-to-t from-rio-oscuro/80 via-rio-oscuro/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out translate-y-6 group-hover:translate-y-0">
+        <p className="text-white text-base font-serif italic leading-relaxed line-clamp-3">
           {item.caption}
         </p>
         <div className="mt-8 flex items-center justify-between">
