@@ -1,4 +1,4 @@
-import { products } from "@/data/products";
+import { getAllProducts } from "@/lib/products-db";
 import { WHATSAPP } from "@/lib/config";
 import Link from "next/link";
 
@@ -8,7 +8,8 @@ function formatPrice(price: number): string {
   return `$${price.toLocaleString("es-AR")}`;
 }
 
-export function CollectionSection() {
+export async function CollectionSection() {
+  const products = await getAllProducts();
   return (
     <section id="coleccion" className="section-padding bg-arena">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -38,7 +39,7 @@ export function CollectionSection() {
               className="group cursor-pointer"
             >
               {/* Product Image — Catalog style */}
-              <div className="relative aspect-[4/3] overflow-hidden mb-5 bg-rio-oscuro/5">
+              <div className="relative aspect-square overflow-hidden mb-5 bg-rio-oscuro/5">
                 <img
                   src={product.images[0]}
                   alt={product.name}
@@ -72,19 +73,27 @@ export function CollectionSection() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA Row */}
         <div className="mt-16 pt-8 border-t border-alpaca/15 flex flex-col sm:flex-row items-center justify-between gap-6">
           <p className="font-body text-sm text-rio-oscuro/50">
             Consultá disponibilidad y envíos por WhatsApp.
           </p>
-          <a
-            href={WHATSAPP.catalogUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            <span>Colección Completa</span>
-          </a>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/coleccion"
+              className="btn-ghost text-rio-oscuro"
+            >
+              Ver catálogo completo
+            </Link>
+            <a
+              href={WHATSAPP.catalogUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              <span>Consultar</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

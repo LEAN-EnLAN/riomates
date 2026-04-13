@@ -67,6 +67,7 @@ export default function RootLayout({
     <html lang="es" className={`${outfit.variable} ${sourceSans.variable} ${cormorant.variable} ${jetbrains.variable}`}>
       <head>
         <link rel="canonical" href="https://riomates.com.ar" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -101,18 +102,6 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <div className="loading-overlay" id="loadingOverlay">
-          <div className="text-center">
-            <img
-              src="/images/products/logo-riomates.png"
-              alt="RioMates"
-              className="w-20 h-20 mx-auto mb-4 opacity-80"
-            />
-            <p className="font-body text-[0.6rem] tracking-[0.3em] uppercase text-calabaza/70">
-              Rosario, Santa Fe
-            </p>
-          </div>
-        </div>
         <LoadingScreen />
         <div className="grain-overlay" />
         <Navigation />

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { WHATSAPP } from "@/lib/config";
 
 export function WhatsAppButton() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -14,6 +16,7 @@ export function WhatsAppButton() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (pathname?.startsWith("/admin")) return null;
   if (!visible) return null;
 
   return (

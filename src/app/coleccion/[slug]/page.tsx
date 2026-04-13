@@ -1,4 +1,4 @@
-import { getProductBySlug, products } from "@/data/products";
+import { getProductBySlug, getAllSlugs } from "@/lib/products-db";
 import { notFound } from "next/navigation";
 import { WHATSAPP } from "@/lib/config";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     return {
@@ -31,8 +31,9 @@ export async function generateMetadata(
   };
 }
 
-export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 function formatPrice(price: number): string {
@@ -41,7 +42,7 @@ function formatPrice(price: number): string {
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();

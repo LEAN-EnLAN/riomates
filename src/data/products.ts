@@ -10,229 +10,17 @@ export interface Product {
   craftSections: {
     title: string;
     text: string;
-  }[  {
-    slug: "bombillon-alpaca",
-    name: "Bombillón de Alpaca",
-    edition: "Cincelado con Pico y Aro de Bronce",
-    price: 27000,
-    shortDescription:
-      "Bombillón de alpaca cincelado a mano, con pico y aro de bronce. El compañero perfecto para tus mates RioMates.",
-    fullDescription:
-      "El Bombillón de Alpaca es la pieza complementaria ideal para nuestros mates. Cincelado a mano, con pico y aro de bronce, combina la resistencia de la alpaca con la elegancia del bronce.",
-    storyTitle: "El compañero perfecto",
-    story: `Un buen mate necesita una buena bombilla. El Bombillón de Alpaca nació para acompañar nuestras piezas más exclusivas.
-    
-Cada bombillón es cincelado a mano, dándole una textura única que además facilita el agarre. El pico de bronce no solo es un detalle estético, sino que aporta durabilidad y confort al tomar.`,
-    craftSections: [
-      {
-        title: "Alpaca maciza",
-        text: "Fabricado en alpaca de alta calidad, garantizando durabilidad y resistencia al uso diario.",
-      },
-      {
-        title: "Cincelado a mano",
-        text: "El cuerpo es cincelado artesanalmente, creando una textura que lo hace único y mejora el agarre.",
-      },
-    ],
-    ritualGuide: [
-      {
-        step: "01",
-        title: "Limpieza profunda",
-        description: "Herví la bombilla periódicamente con agua y bicarbonato para mantenerla impecable.",
-      },
-      {
-        step: "02",
-        title: "Posicionamiento",
-        description: "Una vez colocada en el mate, no la muevas para no lavar la yerba.",
-      },
-      {
-        step: "03",
-        title: "Disfrutá",
-        description: "El flujo perfecto para cada sorbo.",
-      },
-    ],
-    details: [
-      { label: "Tipo", value: "Bombillón" },
-      { label: "Material", value: "Alpaca, pico y aro de bronce" },
-      { label: "Origen", value: "Rosario, Santa Fe" },
-      { label: "Cuidado", value: "Limpiar regularmente, hervir mensualmente." },
-      { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
-    ],
-    images: [
-      "/images/products/catalog/bombillon-alpaca-cincelado-left.png",
-      "/images/products/catalog/bombillon-alpaca-cincelado-right.png",
-    ],
-    whatsappMessage: "Hola! Me interesa el Bombillón de Alpaca — Cincelado con Pico y Aro de Bronce",
-  },
-];
+  }[];
   ritualGuide: {
     step: string;
     title: string;
     description: string;
-  }[  {
-    slug: "bombillon-alpaca",
-    name: "Bombillón de Alpaca",
-    edition: "Cincelado con Pico y Aro de Bronce",
-    price: 27000,
-    shortDescription:
-      "Bombillón de alpaca cincelado a mano, con pico y aro de bronce. El compañero perfecto para tus mates RioMates.",
-    fullDescription:
-      "El Bombillón de Alpaca es la pieza complementaria ideal para nuestros mates. Cincelado a mano, con pico y aro de bronce, combina la resistencia de la alpaca con la elegancia del bronce.",
-    storyTitle: "El compañero perfecto",
-    story: `Un buen mate necesita una buena bombilla. El Bombillón de Alpaca nació para acompañar nuestras piezas más exclusivas.
-    
-Cada bombillón es cincelado a mano, dándole una textura única que además facilita el agarre. El pico de bronce no solo es un detalle estético, sino que aporta durabilidad y confort al tomar.`,
-    craftSections: [
-      {
-        title: "Alpaca maciza",
-        text: "Fabricado en alpaca de alta calidad, garantizando durabilidad y resistencia al uso diario.",
-      },
-      {
-        title: "Cincelado a mano",
-        text: "El cuerpo es cincelado artesanalmente, creando una textura que lo hace único y mejora el agarre.",
-      },
-    ],
-    ritualGuide: [
-      {
-        step: "01",
-        title: "Limpieza profunda",
-        description: "Herví la bombilla periódicamente con agua y bicarbonato para mantenerla impecable.",
-      },
-      {
-        step: "02",
-        title: "Posicionamiento",
-        description: "Una vez colocada en el mate, no la muevas para no lavar la yerba.",
-      },
-      {
-        step: "03",
-        title: "Disfrutá",
-        description: "El flujo perfecto para cada sorbo.",
-      },
-    ],
-    details: [
-      { label: "Tipo", value: "Bombillón" },
-      { label: "Material", value: "Alpaca, pico y aro de bronce" },
-      { label: "Origen", value: "Rosario, Santa Fe" },
-      { label: "Cuidado", value: "Limpiar regularmente, hervir mensualmente." },
-      { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
-    ],
-    images: [
-      "/images/products/catalog/bombillon-alpaca-cincelado-left.png",
-      "/images/products/catalog/bombillon-alpaca-cincelado-right.png",
-    ],
-    whatsappMessage: "Hola! Me interesa el Bombillón de Alpaca — Cincelado con Pico y Aro de Bronce",
-  },
-];
+  }[];
   details: {
     label: string;
     value: string;
-  }[  {
-    slug: "bombillon-alpaca",
-    name: "Bombillón de Alpaca",
-    edition: "Cincelado con Pico y Aro de Bronce",
-    price: 27000,
-    shortDescription:
-      "Bombillón de alpaca cincelado a mano, con pico y aro de bronce. El compañero perfecto para tus mates RioMates.",
-    fullDescription:
-      "El Bombillón de Alpaca es la pieza complementaria ideal para nuestros mates. Cincelado a mano, con pico y aro de bronce, combina la resistencia de la alpaca con la elegancia del bronce.",
-    storyTitle: "El compañero perfecto",
-    story: `Un buen mate necesita una buena bombilla. El Bombillón de Alpaca nació para acompañar nuestras piezas más exclusivas.
-    
-Cada bombillón es cincelado a mano, dándole una textura única que además facilita el agarre. El pico de bronce no solo es un detalle estético, sino que aporta durabilidad y confort al tomar.`,
-    craftSections: [
-      {
-        title: "Alpaca maciza",
-        text: "Fabricado en alpaca de alta calidad, garantizando durabilidad y resistencia al uso diario.",
-      },
-      {
-        title: "Cincelado a mano",
-        text: "El cuerpo es cincelado artesanalmente, creando una textura que lo hace único y mejora el agarre.",
-      },
-    ],
-    ritualGuide: [
-      {
-        step: "01",
-        title: "Limpieza profunda",
-        description: "Herví la bombilla periódicamente con agua y bicarbonato para mantenerla impecable.",
-      },
-      {
-        step: "02",
-        title: "Posicionamiento",
-        description: "Una vez colocada en el mate, no la muevas para no lavar la yerba.",
-      },
-      {
-        step: "03",
-        title: "Disfrutá",
-        description: "El flujo perfecto para cada sorbo.",
-      },
-    ],
-    details: [
-      { label: "Tipo", value: "Bombillón" },
-      { label: "Material", value: "Alpaca, pico y aro de bronce" },
-      { label: "Origen", value: "Rosario, Santa Fe" },
-      { label: "Cuidado", value: "Limpiar regularmente, hervir mensualmente." },
-      { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
-    ],
-    images: [
-      "/images/products/catalog/bombillon-alpaca-cincelado-left.png",
-      "/images/products/catalog/bombillon-alpaca-cincelado-right.png",
-    ],
-    whatsappMessage: "Hola! Me interesa el Bombillón de Alpaca — Cincelado con Pico y Aro de Bronce",
-  },
-];
-  images: string[  {
-    slug: "bombillon-alpaca",
-    name: "Bombillón de Alpaca",
-    edition: "Cincelado con Pico y Aro de Bronce",
-    price: 27000,
-    shortDescription:
-      "Bombillón de alpaca cincelado a mano, con pico y aro de bronce. El compañero perfecto para tus mates RioMates.",
-    fullDescription:
-      "El Bombillón de Alpaca es la pieza complementaria ideal para nuestros mates. Cincelado a mano, con pico y aro de bronce, combina la resistencia de la alpaca con la elegancia del bronce.",
-    storyTitle: "El compañero perfecto",
-    story: `Un buen mate necesita una buena bombilla. El Bombillón de Alpaca nació para acompañar nuestras piezas más exclusivas.
-    
-Cada bombillón es cincelado a mano, dándole una textura única que además facilita el agarre. El pico de bronce no solo es un detalle estético, sino que aporta durabilidad y confort al tomar.`,
-    craftSections: [
-      {
-        title: "Alpaca maciza",
-        text: "Fabricado en alpaca de alta calidad, garantizando durabilidad y resistencia al uso diario.",
-      },
-      {
-        title: "Cincelado a mano",
-        text: "El cuerpo es cincelado artesanalmente, creando una textura que lo hace único y mejora el agarre.",
-      },
-    ],
-    ritualGuide: [
-      {
-        step: "01",
-        title: "Limpieza profunda",
-        description: "Herví la bombilla periódicamente con agua y bicarbonato para mantenerla impecable.",
-      },
-      {
-        step: "02",
-        title: "Posicionamiento",
-        description: "Una vez colocada en el mate, no la muevas para no lavar la yerba.",
-      },
-      {
-        step: "03",
-        title: "Disfrutá",
-        description: "El flujo perfecto para cada sorbo.",
-      },
-    ],
-    details: [
-      { label: "Tipo", value: "Bombillón" },
-      { label: "Material", value: "Alpaca, pico y aro de bronce" },
-      { label: "Origen", value: "Rosario, Santa Fe" },
-      { label: "Cuidado", value: "Limpiar regularmente, hervir mensualmente." },
-      { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
-    ],
-    images: [
-      "/images/products/catalog/bombillon-alpaca-cincelado-left.png",
-      "/images/products/catalog/bombillon-alpaca-cincelado-right.png",
-    ],
-    whatsappMessage: "Hola! Me interesa el Bombillón de Alpaca — Cincelado con Pico y Aro de Bronce",
-  },
-];
+  }[];
+  images: string[];
   whatsappMessage: string;
 }
 
@@ -292,8 +80,7 @@ Cada Torpedo Crudo es único. Como cada atardecer sobre el agua.`,
       { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
     ],
     images: [
-      "/images/products/catalog/torpedo-crudo-virola-lacre-left.png",
-      "/images/products/catalog/torpedo-crudo-virola-lacre-right.png",
+      "/images/products/catalog/torpedo-crudo-virola-lacre.png",
     ],
     whatsappMessage: "Hola! Me interesa el mate Torpedo Crudo — Cosido al Tiento con Virola al Lacre",
   },
@@ -348,8 +135,7 @@ La virola al lacre es el sello final: une todo en una pieza que es más que la s
       { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
     ],
     images: [
-      "/images/products/catalog/torpedo-criollo-crudo-left.png",
-      "/images/products/catalog/torpedo-criollo-crudo-right.png",
+      "/images/products/catalog/torpedo-criollo-crudo.png",
     ],
     whatsappMessage: "Hola! Me interesa el mate Torpedo Criollo — Cosido al Tiento con Virola al Lacre",
   },
@@ -408,8 +194,7 @@ Solo producimos unas pocas unidades por mes. Porque lo bueno lleva tiempo.`,
       { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
     ],
     images: [
-      "/images/products/catalog/imperial-crudo-base-alpaca-left.png",
-      "/images/products/catalog/imperial-crudo-base-alpaca-right.png",
+      "/images/products/catalog/imperial-crudo-base-alpaca.png",
     ],
     whatsappMessage: "Hola! Me interesa el mate Imperial Crudo — Con Base de Alpaca y Bronce",
   },
@@ -464,8 +249,7 @@ La calabaza se muestra en su estado más natural. La base cosida al tiento es el
       { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
     ],
     images: [
-      "/images/products/catalog/criollo-base-cosida-left.png",
-      "/images/products/catalog/criollo-base-cosida-right.png",
+      "/images/products/catalog/criollo-base-cosida.png",
     ],
     whatsappMessage: "Hola! Me interesa el mate Criollo — Con Base Cosida al Tiento",
   },
@@ -520,8 +304,7 @@ Una pieza para quienes valoran lo autóctono.`,
       { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
     ],
     images: [
-      "/images/products/catalog/imperial-algarrobo-virola-left.png",
-      "/images/products/catalog/imperial-algarrobo-virola-right.png",
+      "/images/products/catalog/imperial-algarrobo-virola.png",
     ],
     whatsappMessage: "Hola! Me interesa el mate Imperial de Algarrobo — Con Virola de Alpaca",
   },
@@ -573,11 +356,10 @@ Cada bombillón es cincelado a mano, dándole una textura única que además fac
       { label: "Entrega", value: "Rosario: 24-48hs. Interior: 5-7 días." },
     ],
     images: [
-      "/images/products/catalog/bombillon-alpaca-cincelado-left.png",
-      "/images/products/catalog/bombillon-alpaca-cincelado-right.png",
+      "/images/products/catalog/bombillon-alpaca-cincelado.png",
     ],
     whatsappMessage: "Hola! Me interesa el Bombillón de Alpaca — Cincelado con Pico y Aro de Bronce",
-  },
+  }
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SOCIAL, WHATSAPP, SITE } from "@/lib/config";
 
 const NAV_LINKS = [
@@ -15,6 +18,9 @@ const LEGAL_LINKS = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <footer className="py-16 lg:py-20 bg-arena border-t border-rio-oscuro/8">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -23,7 +29,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-3 mb-4">
               <img
-                src="/images/products/logo-riomates.svg"
+                src="/logo.svg"
                 alt="RioMates"
                 className="w-9 h-9 object-contain"
               />

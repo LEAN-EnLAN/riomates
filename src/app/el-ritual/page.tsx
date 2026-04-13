@@ -48,13 +48,13 @@ export default function RitualPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-off-white">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-rio-oscuro text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <div className="deco-line mx-auto mb-8" />
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-rio-oscuro leading-[1.1] mb-6">
+          <div className="deco-line mx-auto mb-8 bg-calabaza/40" />
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
             El <em className="italic text-calabaza">Ritual</em>
           </h1>
-          <p className="font-body text-base text-rio-oscuro/60 leading-relaxed max-w-2xl mx-auto">
+          <p className="font-body text-base text-white/50 leading-relaxed max-w-2xl mx-auto">
             El mate no es solo una bebida. Es un acto de presencia. Es el momento
             en que el tiempo se detiene y todo lo que importa es el agua a la
             temperatura justa, la yerba recién cebada, el compañero al lado.
@@ -65,7 +65,7 @@ export default function RitualPage() {
       <RitualSection />
 
       {/* Blog Posts */}
-      <section className="section-padding bg-off-white">
+      <section className="section-padding bg-arena">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="deco-line mb-8" />
           <h2 className="font-serif text-3xl md:text-4xl text-rio-oscuro leading-[1.1] mb-12">

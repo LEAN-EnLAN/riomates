@@ -1,4 +1,5 @@
 import { CollectionSection } from "@/sections/CollectionSection";
+import { getAllProducts } from "@/lib/products-db";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -8,7 +9,8 @@ export const metadata: Metadata = {
     "Cada pieza es única, como el río que le da nombre. Descubrí nuestra colección de mates artesanales de calabaza, alpaca y cuero.",
 };
 
-export default function CollectionPage() {
+export default async function CollectionPage() {
+  const products = await getAllProducts();
   return (
     <>
       {/* Page Header — Clean Editorial */}
@@ -36,7 +38,7 @@ export default function CollectionPage() {
               La <em className="italic text-calabaza/90">Colección</em>
             </p>
             <p className="font-body text-sm text-rio-oscuro/45 leading-relaxed mt-6 max-w-xl">
-              Cinco expresiones de nuestro artesanado. Cada pieza es única,
+              {products.length} piezas artesanales. Cada una es única,
               como el río que le da nombre.
             </p>
           </div>

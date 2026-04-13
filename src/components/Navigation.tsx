@@ -2,16 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SOCIAL, WHATSAPP } from "@/lib/config";
 
 const NAV_LINKS = [
   { href: "/#origen", label: "El Origen" },
-  { href: "/#coleccion", label: "Colección" },
+  { href: "/coleccion", label: "Colección" },
   { href: "/#ritual", label: "El Ritual" },
   { href: "/#visitanos", label: "Visitanos" },
 ];
 
 export function Navigation() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -25,6 +27,8 @@ export function Navigation() {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
 
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <>
       <nav
@@ -37,7 +41,7 @@ export function Navigation() {
             {/* Logo */}
             <Link href="/" className="relative z-50 flex items-center gap-3">
               <img
-                src="/images/products/logo-riomates.svg"
+                src="/logo.svg"
                 alt="RioMates"
                 className="w-9 h-9 lg:w-10 lg:h-10 object-contain"
               />

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Reveal } from "@/components/Reveal";
 
-const HERO_IMAGE = "/n-carrousel/01-parana-hero.png";
+const HERO_IMAGE = "/images/products/hero.png";
 const HERO_VIDEO = "/assets/hero-loop.webm";
 const HERO_VIDEO_FALLBACK = "/assets/hero-loop.mp4";
 
@@ -78,21 +78,11 @@ export function HeroSection() {
             </h1>
           </Reveal>
 
-          {/* Small logo + tagline */}
+          {/* Location tagline */}
           <Reveal delay={150}>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/90 rounded-lg flex items-center justify-center">
-                <span className="font-heading text-lg font-bold text-rio-oscuro leading-none">R</span>
-              </div>
-              <div>
-                <p className="font-heading text-sm font-semibold text-white tracking-tight leading-none">
-                  RioMates
-                </p>
-                <p className="font-body text-[0.6rem] tracking-[0.3em] uppercase text-calabaza/80 mt-1">
-                  Rosario, Santa Fe — Argentina
-                </p>
-              </div>
-            </div>
+            <p className="font-body text-[0.6rem] tracking-[0.3em] uppercase text-calabaza/80 mb-8">
+              Rosario, Santa Fe — Argentina
+            </p>
           </Reveal>
 
           {/* Subtitle */}
