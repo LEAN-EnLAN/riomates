@@ -37,8 +37,8 @@ export function CollectionSection() {
               href={`/coleccion/${product.slug}`}
               className="group cursor-pointer"
             >
-              {/* Product Image — Tall aspect ratio like catalog */}
-              <div className="relative aspect-[3/4] overflow-hidden mb-5 bg-rio-oscuro/5">
+              {/* Product Image — Catalog style */}
+              <div className="relative aspect-[4/3] overflow-hidden mb-5 bg-rio-oscuro/5">
                 <img
                   src={product.images[0]}
                   alt={product.name}
