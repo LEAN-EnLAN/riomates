@@ -13,8 +13,11 @@ const NAV_LINKS = [
   { href: "/#visitanos", label: "Visitanos" },
 ];
 
+const DARK_HERO_ROUTES = ["/"];
+
 export function Navigation() {
   const pathname = usePathname();
+  const isDarkHero = DARK_HERO_ROUTES.some((r) => pathname === r || pathname?.startsWith(r + "#"));
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,11 +33,13 @@ export function Navigation() {
 
   if (pathname?.startsWith("/admin")) return null;
 
+  const shouldStartDark = isDarkHero && !scrolled;
+
   return (
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled ? "nav-scrolled" : ""
+          scrolled || !shouldStartDark ? "nav-scrolled" : ""
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -49,13 +54,13 @@ export function Navigation() {
               <div className="hidden sm:block">
                 <span
                   className={`nav-logo-text font-heading text-lg lg:text-xl font-semibold tracking-tight transition-colors duration-500 block leading-none`}
-                  style={{ color: scrolled ? undefined : "#ffffff" }}
+                  style={{ color: shouldStartDark ? "#ffffff" : undefined }}
                 >
                   RioMates
                 </span>
                 <span
                   className={`nav-subtitle font-body text-[0.55rem] tracking-[0.25em] uppercase transition-colors duration-500`}
-                  style={{ color: scrolled ? undefined : "rgba(255,255,255,0.55)" }}
+                  style={{ color: shouldStartDark ? "rgba(255,255,255,0.55)" : undefined }}
                 >
                   Rosario
                 </span>
@@ -68,8 +73,8 @@ export function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link ${scrolled ? "" : "text-white/85"}`}
-                  style={!scrolled ? { color: "rgba(255,255,255,0.85)" } : {}}
+                  className={`nav-link ${shouldStartDark ? "text-white/85" : ""}`}
+                  style={shouldStartDark ? { color: "rgba(255,255,255,0.85)" } : {}}
                 >
                   {link.label}
                 </Link>
@@ -82,8 +87,8 @@ export function Navigation() {
                 href={SOCIAL.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`nav-link ${scrolled ? "" : "text-white/85"}`}
-                style={!scrolled ? { color: "rgba(255,255,255,0.85)" } : {}}
+                className={`nav-link ${shouldStartDark ? "text-white/85" : ""}`}
+                style={shouldStartDark ? { color: "rgba(255,255,255,0.85)" } : {}}
               >
                 IG
               </a>
@@ -91,8 +96,8 @@ export function Navigation() {
                 href={SOCIAL.tiktok.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`nav-link ${scrolled ? "" : "text-white/85"}`}
-                style={!scrolled ? { color: "rgba(255,255,255,0.85)" } : {}}
+                className={`nav-link ${shouldStartDark ? "text-white/85" : ""}`}
+                style={shouldStartDark ? { color: "rgba(255,255,255,0.85)" } : {}}
               >
                 TT
               </a>
@@ -116,19 +121,19 @@ export function Navigation() {
                 className={`hamburger-line w-6 h-[1px] transition-all duration-300 ${
                   menuOpen ? "rotate-45 translate-y-[5px]" : ""
                 }`}
-                style={{ background: scrolled || menuOpen ? "#1A120B" : "#ffffff" }}
+                style={{ background: scrolled || menuOpen || !shouldStartDark ? "#1A120B" : "#ffffff" }}
               />
               <span
                 className={`hamburger-line w-4 h-[1px] transition-all duration-300 ${
                   menuOpen ? "opacity-0" : ""
                 }`}
-                style={{ background: scrolled || menuOpen ? "#1A120B" : "#ffffff" }}
+                style={{ background: scrolled || menuOpen || !shouldStartDark ? "#1A120B" : "#ffffff" }}
               />
               <span
                 className={`hamburger-line w-6 h-[1px] transition-all duration-300 ${
                   menuOpen ? "-rotate-45 -translate-y-[5px]" : ""
                 }`}
-                style={{ background: scrolled || menuOpen ? "#1A120B" : "#ffffff" }}
+                style={{ background: scrolled || menuOpen || !shouldStartDark ? "#1A120B" : "#ffffff" }}
               />
             </button>
           </div>
