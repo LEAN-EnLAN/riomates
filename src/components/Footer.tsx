@@ -1,8 +1,11 @@
 "use client";
 
+import { At, WhatsappLogo, InstagramLogo, TiktokLogo } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SOCIAL, WHATSAPP, SITE } from "@/lib/config";
+
+const IG_DM = `https://ig.me/m/${SOCIAL.instagram.handle.replace("@", "")}`;
 
 const NAV_LINKS = [
   { href: "/#origen", label: "El Origen" },
@@ -13,9 +16,9 @@ const NAV_LINKS = [
 ];
 
 const LEGAL_LINKS = [
-  { href: "#", label: "Política de Privacidad" },
-  { href: "#", label: "Términos y Condiciones" },
-  { href: "#", label: "Envíos y Devoluciones" },
+  { href: "/politica-de-privacidad", label: "Política de Privacidad" },
+  { href: "/terminos-y-condiciones", label: "Términos y Condiciones" },
+  { href: "/envios-y-devoluciones", label: "Envíos y Devoluciones" },
 ];
 
 export function Footer() {
@@ -74,23 +77,38 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href={WHATSAPP.catalogUrl} target="_blank" rel="noopener noreferrer" className="font-body text-sm text-rio-oscuro/50 hover:text-calabaza transition-colors">
+                <a
+                  href={WHATSAPP.catalogUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-body text-sm text-rio-oscuro/50 hover:text-calabaza transition-colors"
+                >
+                  <WhatsappLogo size={16} />
                   WhatsApp
                 </a>
               </li>
               <li>
-                <a href="mailto:hola@riomates.com.ar" className="font-body text-sm text-rio-oscuro/50 hover:text-calabaza transition-colors">
-                  hola@riomates.com.ar
+                <a
+                  href={IG_DM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-body text-sm text-rio-oscuro/50 hover:text-calabaza transition-colors"
+                >
+                  <InstagramLogo size={16} />
+                  <At size={14} className="text-rio-oscuro/30" />
+                  <span>{SOCIAL.instagram.handle.replace("@", "")}</span>
                 </a>
               </li>
               <li>
-                <a href={SOCIAL.instagram.url} target="_blank" rel="noopener noreferrer" className="font-body text-sm text-rio-oscuro/50 hover:text-calabaza transition-colors">
-                  {SOCIAL.instagram.handle}
-                </a>
-              </li>
-              <li>
-                <a href={SOCIAL.tiktok.url} target="_blank" rel="noopener noreferrer" className="font-body text-sm text-rio-oscuro/50 hover:text-calabaza transition-colors">
-                  {SOCIAL.tiktok.handle}
+                <a
+                  href={SOCIAL.tiktok.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-body text-sm text-rio-oscuro/50 hover:text-calabaza transition-colors"
+                >
+                  <TiktokLogo size={16} />
+                  <At size={14} className="text-rio-oscuro/30" />
+                  <span>{SOCIAL.tiktok.handle.replace("@", "")}</span>
                 </a>
               </li>
             </ul>
