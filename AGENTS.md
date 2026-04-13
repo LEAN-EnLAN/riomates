@@ -20,3 +20,10 @@ Code/commits/PRs: normal. Off: "stop caveman" / "normal mode".
 - No re-render in loops.
 - Use Framer Motion `useMotionValue` for physics.
 - SVG textures over large PNGs.
+
+## Deploy & Infra Rules (Auto-Applied)
+1. **Vercel Deploy First:** Check `git remote -v` before push. If empty, ask for GitHub URL. Ensure `vercel.json` with `{"framework": "nextjs"}` exists.
+2. **Supabase Guard:** Never call supabase directly. Always use a data layer that checks `if (!supabase) return staticFallback`. Client creation must return `null` if env vars are missing.
+3. **Admin Route Isolation:** Any `/admin` page must hide global components (nav, footer, floating buttons) via `usePathname()` guard.
+4. **Secrets First:** Before writing `.env.*` files, always add `.env.local` to `.gitignore`.
+5. **Seed Before Deploy:** If Supabase is involved, seed data via script before deploy so the admin panel works on first load.
