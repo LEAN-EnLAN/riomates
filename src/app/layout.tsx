@@ -37,15 +37,35 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${SITE.name} — Mates Artesanales de Rosario`,
-  description: SITE.tagline,
+  title: `${SITE.name} — Mates Artesanales de Rosario | Tienda Online`,
+  description:
+    "Mates artesanales nacidos donde el Paraná encuentra la tierra. Calabaza curada, alpaca trabajada a mano, cosido al tiento. Comprá online tu mate artesanal en Rosario, Santa Fe.",
+  keywords: [
+    "mates artesanales",
+    "mate artesanal rosario",
+    "mate de calabaza",
+    "mate cosido al tiento",
+    "mate de alpaca",
+    "mates rosario santa fe",
+    "comprar mate artesanal online",
+    "mate torpedo",
+    "mate criollo",
+    "bombilla de alpaca",
+    "mate premium argentina",
+    "regalo artesanal rosario",
+  ],
+  authors: [{ name: "RioMates", url: "https://riomates.com.ar" }],
   metadataBase: new URL(SITE.url),
+  alternates: {
+    canonical: "https://riomates.com.ar",
+  },
   openGraph: {
     title: `${SITE.name} — Mates Artesanales de Rosario`,
     description: SITE.tagline,
     type: "website",
     locale: "es_AR",
     siteName: SITE.name,
+    url: "https://riomates.com.ar",
   },
   twitter: {
     card: "summary_large_image",
@@ -55,6 +75,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

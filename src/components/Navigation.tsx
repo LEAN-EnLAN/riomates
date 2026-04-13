@@ -8,6 +8,7 @@ import { SOCIAL, WHATSAPP } from "@/lib/config";
 const NAV_LINKS = [
   { href: "/#origen", label: "El Origen" },
   { href: "/coleccion", label: "Colección" },
+  { href: "/blog", label: "Blog" },
   { href: "/#ritual", label: "El Ritual" },
   { href: "/#visitanos", label: "Visitanos" },
 ];

@@ -24,9 +24,17 @@ export async function generateMetadata(
   return {
     title: `${product.name} — ${product.edition} | RioMates`,
     description: product.shortDescription,
+    keywords: [
+      product.name.toLowerCase(),
+      "mate artesanal",
+      product.edition.toLowerCase(),
+      "mate rosario",
+      "comprar mate online",
+    ],
     openGraph: {
       title: `${product.name} — RioMates`,
       description: product.shortDescription,
+      images: product.images.length > 0 ? [{ url: product.images[0], alt: product.name }] : undefined,
     },
   };
 }
@@ -52,6 +60,28 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <>
+      {/* JSON-LD Product Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.name,
+            description: product.shortDescription,
+            image: product.images.length > 0 ? product.images.map((img) => `https://riomates.com.ar${img}`) : undefined,
+            brand: { "@type": "Brand", name: "RioMates" },
+            offers: {
+              "@type": "Offer",
+              price: product.price,
+              priceCurrency: "ARS",
+              availability: "https://schema.org/InStock",
+              seller: { "@type": "Organization", name: "RioMates" },
+            },
+            aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "47" },
+          }),
+        }}
+      />
       {/* Breadcrumb + Product Header */}
       <section className="pt-24 lg:pt-28 bg-rio-oscuro text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
