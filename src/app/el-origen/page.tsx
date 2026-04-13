@@ -14,13 +14,13 @@ export default function OriginPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-off-white">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-rio-oscuro text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <div className="deco-line mx-auto mb-8" />
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-rio-oscuro leading-[1.1] mb-6">
+          <div className="deco-line mx-auto mb-8 bg-calabaza/40" />
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
             El <em className="italic text-calabaza">Origen</em>
           </h1>
-          <p className="font-body text-base text-rio-oscuro/60 leading-relaxed max-w-2xl mx-auto">
+          <p className="font-body text-base text-white/50 leading-relaxed max-w-2xl mx-auto">
             Donde el río Paraná dibuja su orilla y el horizonte se pierde en el
             agua, nace cada mate RioMates. Una historia de paciencia, manos y
             naturaleza.

@@ -129,9 +129,6 @@ export function SocialShowcase() {
   return (
     <section className="py-24 lg:py-32 bg-rio-oscuro border-y border-rio-oscuro relative overflow-hidden">
       
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-rio-claro/5 pointer-events-none" />
-
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Header */}

@@ -53,25 +53,25 @@ export default async function ProductPage({ params }: Props) {
   return (
     <>
       {/* Breadcrumb + Product Header */}
-      <section className="pt-24 lg:pt-28 bg-arena">
+      <section className="pt-24 lg:pt-28 bg-rio-oscuro text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-8 lg:mb-12">
             <Link
               href="/"
-              className="font-body text-[0.6rem] tracking-[0.2em] uppercase text-rio-oscuro/30 hover:text-rio-oscuro/60 transition-colors"
+              className="font-body text-[0.6rem] tracking-[0.2em] uppercase text-white/30 hover:text-white/60 transition-colors"
             >
               Inicio
             </Link>
-            <span className="text-rio-oscuro/20">/</span>
+            <span className="text-white/20">/</span>
             <Link
               href="/coleccion"
-              className="font-body text-[0.6rem] tracking-[0.2em] uppercase text-rio-oscuro/30 hover:text-rio-oscuro/60 transition-colors"
+              className="font-body text-[0.6rem] tracking-[0.2em] uppercase text-white/30 hover:text-white/60 transition-colors"
             >
               Colección
             </Link>
-            <span className="text-rio-oscuro/20">/</span>
-            <span className="font-body text-[0.6rem] tracking-[0.2em] uppercase text-rio-oscuro/60">
+            <span className="text-white/20">/</span>
+            <span className="font-body text-[0.6rem] tracking-[0.2em] uppercase text-white/60">
               {product.name}
             </span>
           </div>
@@ -94,26 +94,26 @@ export default async function ProductPage({ params }: Props) {
                 <p className="font-heading text-[0.65rem] tracking-[0.35em] uppercase text-calabaza/70 mb-3">
                   {product.edition}
                 </p>
-                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl tracking-[0.05em] uppercase text-rio-oscuro leading-tight mb-6">
+                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl tracking-[0.05em] uppercase text-white leading-tight mb-6">
                   {product.name}
                 </h1>
-                <p className="font-heading text-2xl md:text-3xl text-rio-oscuro/80 tracking-tight mb-8">
+                <p className="font-heading text-2xl md:text-3xl text-white/80 tracking-tight mb-8">
                   {formatPrice(product.price)}
                 </p>
-                <p className="font-body text-sm text-rio-oscuro/55 leading-relaxed mb-10">
+                <p className="font-body text-sm text-white/55 leading-relaxed mb-10">
                   {product.shortDescription}
                 </p>
               </div>
 
               {/* Quick Info */}
-              <div className="border-t border-alpaca/20 pt-6 mb-10">
+              <div className="border-t border-white/10 pt-6 mb-10">
                 <div className="grid grid-cols-2 gap-4">
                   {product.details.slice(0, 4).map((d) => (
                     <div key={d.label}>
-                      <p className="font-body text-[0.6rem] tracking-[0.15em] uppercase text-rio-oscuro/30 mb-1">
+                      <p className="font-body text-[0.6rem] tracking-[0.15em] uppercase text-white/30 mb-1">
                         {d.label}
                       </p>
-                      <p className="font-body text-sm text-rio-oscuro/70">
+                      <p className="font-body text-sm text-white/70">
                         {d.value}
                       </p>
                     </div>
@@ -127,13 +127,13 @@ export default async function ProductPage({ params }: Props) {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary text-center justify-center"
+                  className="btn-primary-light text-center justify-center"
                 >
                   <span>Consultar Disponibilidad</span>
                 </a>
                 <Link
                   href="/coleccion"
-                  className="text-center font-body text-xs tracking-widest uppercase text-rio-oscuro/40 hover:text-rio-oscuro/70 transition-colors py-2"
+                  className="text-center font-body text-xs tracking-widest uppercase text-white/40 hover:text-calabaza transition-colors py-2"
                 >
                   Volver a la colección
                 </Link>
