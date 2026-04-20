@@ -1,5 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getPublishedPosts } from "@/lib/blog-posts";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog — Consejos, Guías y Cultura Matera | RioMates",
@@ -7,37 +10,9 @@ export const metadata: Metadata = {
   keywords: ["cómo curar un mate", "tipos de mate artesanal", "guía del mate", "cultura matera argentina"],
 };
 
-const ARTICLES = [
-  {
-    slug: "como-curar-mate-calabaza",
-    title: "Cómo curar un mate de calabaza: la guía definitiva",
-    excerpt: "El paso más importante antes de cebar tu primer mate. Te enseñamos el método tradicional para que tu calabaza dure años.",
-    category: "Guía",
-    readTime: "5 min",
-    date: "13 Abr 2026",
-    image: "/images/products/mate-laptop-breakfast.jpeg",
-  },
-  {
-    slug: "tipos-mate-artesanal",
-    title: "Tipos de mate artesanal: ¿cuál es el tuyo?",
-    excerpt: "Torpedo, criollo, imperial, de madera, de vidrio. Conocé las diferencias y elegí el mate que mejor se adapta a tu estilo.",
-    category: "Educación",
-    readTime: "4 min",
-    date: "12 Abr 2026",
-    image: "/images/products/mates-duo-silver.jpeg",
-  },
-  {
-    slug: "cosido-al-tiento-tecnica",
-    title: "El cosido al tiento: la técnica que hace únicos a los mates rosarinos",
-    excerpt: "Detrás de cada puntada hay horas de trabajo artesanal. Conocé la tradición del cosido al tiento y por qué es sinónimo de calidad.",
-    category: "Artesanado",
-    readTime: "3 min",
-    date: "11 Abr 2026",
-    image: "/images/products/mate-cuero-bombilla.jpeg",
-  },
-];
+export default async function BlogPage() {
+  const posts = await getPublishedPosts();
 
-export default function BlogPage() {
   return (
     <>
       {/* Header */}
@@ -70,45 +45,41 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Articles */}
+        {/* Articles */}
       <section className="py-16 lg:py-24 bg-arena">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ARTICLES.map((article) => (
-              <Link
-                key={article.slug}
-                href={`/blog/${article.slug}`}
-                className="group"
-              >
-                <div className="aspect-[4/3] overflow-hidden mb-5 bg-rio-oscuro/5">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.04]"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="font-body text-[0.6rem] tracking-[0.15em] uppercase text-calabaza font-semibold">
-                    {article.category}
-                  </span>
-                  <span className="text-rio-oscuro/20">·</span>
-                  <span className="font-body text-[0.6rem] text-rio-oscuro/40">
-                    {article.readTime}
-                  </span>
-                </div>
-                <h2 className="font-heading text-lg tracking-tight text-rio-oscuro mb-2 group-hover:text-calabaza transition-colors leading-snug">
-                  {article.title}
-                </h2>
-                <p className="font-body text-sm text-rio-oscuro/50 leading-relaxed line-clamp-2">
-                  {article.excerpt}
-                </p>
-                <p className="font-body text-[0.6rem] text-rio-oscuro/30 mt-3">
-                  {article.date}
-                </p>
-              </Link>
-            ))}
-          </div>
+          {posts.length === 0 ? (
+            <div className="py-32 text-center border border-dashed border-alpaca/30 rounded-3xl">
+              <p className="font-serif text-2xl text-rio-oscuro/40 mb-4">No hay notas publicadas todavía.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {posts.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/blog/${article.slug}`}
+                  className="group"
+                >
+                  <div className="aspect-[4/3] overflow-hidden mb-5 bg-rio-oscuro/5">
+                    <img
+                      src={article.og_image || "/images/products/mate-laptop-breakfast.jpeg"}
+                      alt={article.title}
+                      className="w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h2 className="font-heading text-lg tracking-tight text-rio-oscuro mb-2 group-hover:text-calabaza transition-colors leading-snug">
+                    {article.title}
+                  </h2>
+                  {article.meta_description ? (
+                    <p className="font-body text-sm text-rio-oscuro/50 leading-relaxed line-clamp-2">
+                      {article.meta_description}
+                    </p>
+                  ) : null}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>
